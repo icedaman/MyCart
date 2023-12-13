@@ -41,12 +41,12 @@ const Hero = () => {
         xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center"
       >
         <img src={currentShoeImg} alt="shoe collection" width={610} height={500}
-          className="object-contain relative z-10"
+          className="object-contain relative z-10 hover:scale-110 duration-300 ease-in-out"
         />
         <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
           {shoes.map((shoe) => (
-            <div key={shoe}>
-              <ShoeCard shoeObj={shoe} changeBigShoeImg={(shoe)=> setCurrentShoeImg(shoe)} selectedBigShoeImg={currentShoeImg} />
+            <div key={shoe.bigShoe}>
+              <ShoeCard shoeObj={shoe} changeBigShoeImg={(shoe: any)=> setCurrentShoeImg(shoe)} selectedBigShoeImg={currentShoeImg} />
             </div>
           ))}
         </div>

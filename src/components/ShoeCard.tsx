@@ -15,7 +15,7 @@ const ShoeCard = ({ shoeObj, changeBigShoeImg, selectedBigShoeImg }) => {
       <div className="flex justify-center items-center bg-card bg-center bg-cover rounded-xl
         sm:w-40 sm:h-40 max-sm:p-4"
       >
-        <img src={shoeObj.thumbnail} alt="shoe collection" width={127} height={103} className=" object-contain" /> 
+        <img src={shoeObj.thumbnail} alt="shoe collection" width={127} height={103} className="object-contain" /> 
       </div>
     </div>
   )
