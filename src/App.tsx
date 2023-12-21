@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
-import TodosDemo from './utilities/reactQuery/CosdenSolutionsTutorial/TodosDemo';
+import PostsDemo from './utilities/reactQuery/WebDevSimplifiedTutorial/PostsDemo';
 
 const App = () => {
 
   return (
     <Routes>
       <Route path='/' element={<LandingPage />} />
-      <Route path='/products' element={<TodosDemo />} />
+      <Route path='/products' element={<PostsDemo />} />
     </Routes>
   )
 }
