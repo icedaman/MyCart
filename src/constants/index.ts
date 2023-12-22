@@ -1,5 +1,6 @@
 import { facebook, instagram, shieldTick, support, truckFast, twitter } from "../assets/icons";
-import { bigShoe1, bigShoe2, bigShoe3, customer1, customer2, shoe4, shoe5, shoe6, shoe7, thumbnailShoe1, thumbnailShoe2, thumbnailShoe3 } from "../assets/images";
+import { bigShoe1, bigShoe2, bigShoe3, customer1, customer2, Shoe4, Shoe5, Shoe6, Shoe7, thumbnailShoe1, thumbnailShoe2, thumbnailShoe3 } from "../assets/images";
+import { shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8 } from "../assets/shoes";
 
 export const navLinks = [
     { href: "#home", label: "Home" },
@@ -32,22 +33,22 @@ export const statistics = [
 
 export const products = [
     {
-        imgURL: shoe4,
+        imgURL: Shoe4,
         name: "Nike Air Jordan-01",
         price: "$200.20",
     },
     {
-        imgURL: shoe5,
+        imgURL: Shoe5,
         name: "Nike Air Jordan-10",
         price: "$210.20",
     },
     {
-        imgURL: shoe6,
+        imgURL: Shoe6,
         name: "Nike Air Jordan-100",
         price: "$220.20",
     },
     {
-        imgURL: shoe7,
+        imgURL: Shoe7,
         name: "Nike Air Jordan-001",
         price: "$230.20",
     },
@@ -123,3 +124,47 @@ export const socialMedia = [
     { src: twitter, alt: "twitter logo" },
     { src: instagram, alt: "instagram logo" },
 ];
+
+
+export const shoeList = [
+    {
+        imgURL: shoe1,
+        name: "New Balance 01",
+        price: "$201.20",
+    },
+    {
+        imgURL: shoe2,
+        name: "Asycs 01",
+        price: "$202.20",
+    },
+    {
+        imgURL: shoe3,
+        name: "New Balance 02",
+        price: "$203.20",
+    },
+    {
+        imgURL: shoe4,
+        name: "Adidas 01",
+        price: "$204.20",
+    },
+    {
+        imgURL: shoe5,
+        name: "Nike Air Jordan-05",
+        price: "$205.20",
+    },
+    {
+        imgURL: shoe6,
+        name: "Nike Air Jordan-06",
+        price: "$206.20",
+    },
+    {
+        imgURL: shoe7,
+        name: "Nike Air Jordan-07",
+        price: "$207.20",
+    },
+    {
+        imgURL: shoe8,
+        name: "Nike Air Jordan-08",
+        price: "$208.20",
+    },
+]

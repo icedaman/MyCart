@@ -1,5 +1,7 @@
 import { XCircleIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
+import { shoeList } from "../constants"
+shoeList
 
 export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState('')
@@ -13,9 +15,15 @@ export const SearchBar = ({ setResults }) => {
     })
   }
 
+  const fetchShoes = (list: any) =>{
+    const filteredResults = shoeList.filter((shoe: { name: string }) => list && shoe && shoe.name && shoe.name.toLowerCase().includes(list))
+    setResults(filteredResults)
+  }
+
   const handleInputChange = (value: any) =>{
     setInput(value)
-    fetchData(value)
+    //fetchData(value)
+    fetchShoes(value)
   }
 
   return (
