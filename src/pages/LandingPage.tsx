@@ -1,4 +1,3 @@
-import Nav from "../components/Nav"
 import ScrollIndicator from "../components/ScrollIndicator"
 import ScrollToTopBtn from "../components/ScrollToTopBtn"
 import { Hero, PopularProducts, SuperQuality, Services, SpecialOffers, CustomerReviews, Subscribe, Footer } from "../sections"
@@ -6,7 +5,6 @@ import { Hero, PopularProducts, SuperQuality, Services, SpecialOffers, CustomerR
 const LandingPage = () => {
   return (
     <main>
-        <Nav />
         <ScrollToTopBtn />
         <ScrollIndicator /> 
         <section className="xl:padding-l wide:padding-r padding-b">

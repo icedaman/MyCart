@@ -39,7 +39,7 @@ const FetchAxiosExample = () => {
     <section className="padding bg-indigo-700">
       <h1 className="text-3xl text-white font-bold font-palanquin text-center">Products</h1>
       <div className="bg-amber-500 p-20">
-        {products.map((product: any) => product.category === "laptops" ? <img src={product.thumbnail} /> : null
+        {products.map((product: any) => product.category === "laptops" ? <img key={product.id} src={product.thumbnail} /> : null
         )}
       </div>
     </section>
