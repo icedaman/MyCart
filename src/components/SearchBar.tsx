@@ -1,10 +1,10 @@
 import { XCircleIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { shoeList } from "../constants"
-shoeList
 
 export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState('')
+  const [showSearchBtn, setShowSearchBtn] = useState(false)
 
   const fetchData = (value: any) =>{
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -26,15 +26,27 @@ export const SearchBar = ({ setResults }) => {
     fetchShoes(value)
   }
 
-  return (
-    <div className="bg-amber-300 p-2 rounded-full shadow-lg flex items-center">
-        <MagnifyingGlassIcon className="inline-block h-8 w-8 ml-5 text-coral-red" aria-hidden="true" />
-        <input type="text" placeholder="Type to search..." 
-          className=" bg-transparent border-none h-full w-full ml-6 text-lg font-palanquin"
-          value={input} onChange={(e)=>handleInputChange(e.target.value)}  
-        />
+  const handleCloseBtnClick = () => {
+    setInput('')
+    setShowSearchBtn(false)
+    setResults([])
+  }
 
-        {/* <XCircleIcon className="block h-6 w-6" aria-hidden="true" /> */}
+  return (
+    <div className="bg-coral-red p-2 rounded-full shadow-lg flex items-center relative">
+        <button  onClick={()=> setShowSearchBtn(!showSearchBtn)}>
+          {!showSearchBtn ? <MagnifyingGlassIcon className="inline-block h-8 w-8 text-white transition-all duration-500 hover:scale-125" aria-hidden="true" /> : null}
+        </button>
+        {showSearchBtn ? (
+          <>
+            <MagnifyingGlassIcon className="inline-block h-8 w-8 ml-5 text-white" aria-hidden="true" />
+            <input type="text" placeholder="Type to search..."
+            className=" bg-transparent border-none h-full w-full ml-6 text-lg font-palanquin text-white"
+            value={input} onChange={(e) => handleInputChange(e.target.value)} />
+          </>
+        ) : null}
+        
+        {showSearchBtn ? (<XCircleIcon className="block h-10 w-10 -right-12 absolute text-coral-red" aria-hidden="true" onClick={handleCloseBtnClick}/>) : null}
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { Bars3Icon, BellIcon, XMarkIcon, Bars4Icon, XCircleIcon } from '@heroico
 import headerLogo from '../assets/images/header-logo.svg'
 import { navLinks } from '../constants'
 import { useState } from 'react'
+import { NavLink, Outlet} from 'react-router-dom'
 
 const Nav = () => {
   const [openMenu, setOpenMenu] = useState(false)

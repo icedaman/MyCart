@@ -1,6 +1,7 @@
 import { facebook, instagram, shieldTick, support, truckFast, twitter } from "../assets/icons";
 import { bigShoe1, bigShoe2, bigShoe3, customer1, customer2, Shoe4, Shoe5, Shoe6, Shoe7, thumbnailShoe1, thumbnailShoe2, thumbnailShoe3 } from "../assets/images";
-import { shoe1, shoe2, shoe3, shoe4, shoe5, shoe6, shoe7, shoe8 } from "../assets/shoes";
+import { shoe1, shoe2,shoe3,shoe4,shoe5,shoe6,shoe7,shoe8, shoe9, shoe10,
+    shoe11, shoe12,shoe13,shoe14,shoe15,shoe16,shoe17,shoe18, shoe19, shoe20 } from "../assets/shoes";
 
 export const navLinks = [
     { href: "#home", label: "Home" },
@@ -128,43 +129,123 @@ export const socialMedia = [
 
 export const shoeList = [
     {
+        id: 1,
         imgURL: shoe1,
         name: "New Balance 01",
         price: "$201.20",
     },
     {
+        id: 2,
         imgURL: shoe2,
         name: "Asycs 01",
         price: "$202.20",
     },
     {
+        id: 3,
         imgURL: shoe3,
         name: "New Balance 02",
         price: "$203.20",
     },
     {
+        id: 4,
         imgURL: shoe4,
         name: "Adidas 01",
         price: "$204.20",
     },
     {
+        id: 5,
         imgURL: shoe5,
         name: "Nike Air Jordan-05",
         price: "$205.20",
     },
     {
+        id: 6,
         imgURL: shoe6,
         name: "Nike Air Jordan-06",
         price: "$206.20",
     },
     {
+        id: 7,
         imgURL: shoe7,
         name: "Nike Air Jordan-07",
         price: "$207.20",
     },
     {
+        id: 8,
         imgURL: shoe8,
         name: "Nike Air Jordan-08",
         price: "$208.20",
+    },
+    {
+        id: 9,
+        imgURL: shoe9,
+        name: "Nike Air Jordan-09",
+        price: "$207.20",
+    },
+    {
+        id: 10,
+        imgURL: shoe10,
+        name: "Nike Air Jordan-10",
+        price: "$208.20",
+    },
+    {
+        id: 11,
+        imgURL: shoe11,
+        name: "New Balance 11",
+        price: "$201.20",
+    },
+    {
+        id: 12,
+        imgURL: shoe12,
+        name: "Asycs 11",
+        price: "$202.20",
+    },
+    {
+        id: 13,
+        imgURL: shoe13,
+        name: "New Balance 12",
+        price: "$203.20",
+    },
+    {
+        id: 14,
+        imgURL: shoe14,
+        name: "Adidas 14",
+        price: "$204.20",
+    },
+    {
+        id: 15,
+        imgURL: shoe15,
+        name: "Nike Air Jordan-15",
+        price: "$205.20",
+    },
+    {
+        id: 16,
+        imgURL: shoe16,
+        name: "Nike Air Jordan-16",
+        price: "$206.20",
+    },
+    {
+        id: 17,
+        imgURL: shoe17,
+        name: "Nike Air Jordan-17",
+        price: "$207.20",
+    },
+    {
+        id: 18,
+        imgURL: shoe18,
+        name: "Nike Air Jordan-18",
+        price: "$208.20",
+    },
+    {
+        id: 19,
+        imgURL: shoe19,
+        name: "Nike Air Jordan-19",
+        price: "$207.20",
+    },
+    {
+        id: 20,
+        imgURL: shoe20,
+        name: "Nike Air Jordan-20",
+        price: "$228.20",
     },
 ]
