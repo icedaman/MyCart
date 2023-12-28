@@ -1,5 +1,5 @@
 import { Bars3Icon, BellIcon, XMarkIcon, Bars4Icon, XCircleIcon } from '@heroicons/react/24/outline'
-import headerLogo from '../assets/images/header-logo.svg'
+import shoesLogo from '../assets/images/shoesLogo.svg'
 import { navLinks } from '../constants'
 import { useState } from 'react'
 import { NavLink, Outlet} from 'react-router-dom'
@@ -12,9 +12,9 @@ const Nav = () => {
       <div className="md:flex items-center justify-between bg-amber-300 py-5 md:px-10 px-7">
         <div className="cursor-pointer flex items-center">
           <span className="">
-            <a href="/">
-              <img src={headerLogo} alt='Logo' width={130} height={29}/>
-            </a>
+            <NavLink to="/">
+              <img src={shoesLogo} alt='Logo' width={100} className='rounded-xl'/>
+            </NavLink>
             {/* <Bars3CenterLeftIcon className="block h-10 w-10" aria-hidden="true" /> */}
           </span>
         </div>
@@ -31,13 +31,16 @@ const Nav = () => {
          ${openMenu ? 'top-16 opacity-100' : 'top-[-490px]'}`}>
           {navLinks.map((link)=>(
             <li key={link.label} className='md:ml-8 text-xl font-montserrat font-semibold md:my-0 my-7'>
-              <a href={link.href} className='text-gray-800 hover:text-white-400 duration-100 hover:bg-coral-red'>
+              <NavLink to={link.href} className='text-gray-800 hover:text-white-400 duration-100 hover:bg-coral-red'>
                 {link.label}
-              </a>
+              </NavLink>
             </li>
           ))}
           <button className='bg-coral-red text-white font-palanquin font-semibold py-2 px-6 rounded md:ml-8 hover:bg-red-600 duration-500'>
-            <a href="/products">Products</a>  
+            <NavLink to="/products" style={({ isActive }) => ({ color: isActive ? "white" : "black" })} end={true}>Products</NavLink>  
+          </button>
+          <button className='bg-coral-red text-white font-palanquin font-semibold py-2 px-6 rounded md:ml-8 hover:bg-red-600 duration-500'>
+            <NavLink to="/products/search" style={({ isActive }) => ({ color: isActive ? "white" : "black" })} end={true}>Search</NavLink>  
           </button>
         </ul>
       </div>

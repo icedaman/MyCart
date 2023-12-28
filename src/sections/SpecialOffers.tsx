@@ -1,6 +1,7 @@
 import  offer  from '../assets/images/offer.svg'
 import  arrowRight  from '../assets/icons/arrow-right.svg'
 import Button from '../components/Button'
+import { NavLink} from 'react-router-dom'
 
 const SpecialOffers = () => {
   return (
@@ -19,8 +20,12 @@ const SpecialOffers = () => {
           Our dedication to detail and excellence ensures your satisfaction.
         </p>
         <div className="mt-11 flex flex-wrap gap-4">
-          <Button label={"Shop Now"} iconURL={arrowRight} backgroundColor={undefined} borderColor={undefined} textColor={undefined} fullWidth={false} />
-          <Button label={"Learn More"} iconURL={undefined} backgroundColor={"bg-white"} borderColor={"border-slate-gray"} textColor={"text-slate-gray"} fullWidth={false} />
+          <NavLink to={`/products`}>
+            <Button label={"Shop Now"} iconURL={arrowRight} backgroundColor={undefined} borderColor={undefined} textColor={undefined} fullWidth={false} />
+          </NavLink>
+          <NavLink to={`/products`}>
+            <Button label={"Learn More"} iconURL={undefined} backgroundColor={"bg-white"} borderColor={"border-slate-gray"} textColor={"text-slate-gray"} fullWidth={false} />
+          </NavLink>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import Button from "../components/Button"
 import shoe8 from '../assets/images/shoe8.svg'
+import { NavLink} from 'react-router-dom'
 
 const SuperQuality = () => {
   return (
@@ -20,7 +21,9 @@ const SuperQuality = () => {
           Our dedication to detail and excellence ensures your satisfaction.
         </p>
         <div className="mt-11">
-          <Button label={"View Details"} iconURL={undefined} backgroundColor={undefined} borderColor={undefined} textColor={undefined} fullWidth={false} />
+          <NavLink to={`/products/shoes/2`}>  
+            <Button label={"View Details"} iconURL={undefined} backgroundColor={undefined} borderColor={undefined} textColor={undefined} fullWidth={false} />
+          </NavLink>
         </div>
       </div>
 

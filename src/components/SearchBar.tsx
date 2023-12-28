@@ -1,6 +1,6 @@
 import { XCircleIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
-import { shoeList } from "../constants"
+import { shoeList, pantsList, jacketList, trackSuiteList } from '../constants'
 
 export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState('')
@@ -15,15 +15,16 @@ export const SearchBar = ({ setResults }) => {
     })
   }
 
-  const fetchShoes = (list: any) =>{
-    const filteredResults = shoeList.filter((shoe: { name: string }) => list && shoe && shoe.name && shoe.name.toLowerCase().includes(list))
+  const fetchProducts = (list: any) =>{
+    const allProducts = [...shoeList, ...pantsList, ...jacketList, ...trackSuiteList]
+    const filteredResults = allProducts.filter((item: { name: string }) => list && item && item.name && item.name.toLowerCase().includes(list))
     setResults(filteredResults)
   }
 
   const handleInputChange = (value: any) =>{
     setInput(value)
     //fetchData(value)
-    fetchShoes(value)
+    fetchProducts(value)
   }
 
   const handleCloseBtnClick = () => {

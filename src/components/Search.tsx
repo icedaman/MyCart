@@ -1,9 +1,12 @@
 import { useState } from "react"
 import { SearchBar } from "./SearchBar"
 import { SearchResultsList } from "./SearchResultsList"
+import { useParams } from 'react-router-dom'
 
 const Search = () => {
   const [results, setResults] = useState([])
+  const queryId = useParams()
+  console.log(queryId)
 
   return (
     <div  className="max-container">
