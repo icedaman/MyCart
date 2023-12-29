@@ -2,8 +2,7 @@ import { XCircleIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { shoeList, pantsList, jacketList, trackSuiteList } from '../constants'
 
-export const SearchBar = ({ setResults }) => {
-  const [input, setInput] = useState('')
+export const SearchBar = ({ setResults, input, setInput }) => {
   const [showSearchBtn, setShowSearchBtn] = useState(false)
 
   const fetchData = (value: any) =>{
@@ -24,7 +23,7 @@ export const SearchBar = ({ setResults }) => {
   const handleInputChange = (value: any) =>{
     setInput(value)
     //fetchData(value)
-    fetchProducts(value)
+    fetchProducts(value.toLowerCase())
   }
 
   const handleCloseBtnClick = () => {
@@ -34,20 +33,20 @@ export const SearchBar = ({ setResults }) => {
   }
 
   return (
-    <div className="bg-coral-red p-2 rounded-full shadow-lg flex items-center relative">
-        <button  onClick={()=> setShowSearchBtn(!showSearchBtn)}>
+    <div className="bg-white-400 p-2 rounded-full shadow-lg flex items-center relative w-2/3">
+        {/* <button  onClick={()=> setShowSearchBtn(!showSearchBtn)}>
           {!showSearchBtn ? <MagnifyingGlassIcon className="inline-block h-8 w-8 text-white transition-all duration-500 hover:scale-125" aria-hidden="true" /> : null}
         </button>
-        {showSearchBtn ? (
+        {showSearchBtn ? ( */}
           <>
-            <MagnifyingGlassIcon className="inline-block h-8 w-8 ml-5 text-white" aria-hidden="true" />
-            <input type="text" placeholder="Type to search..."
-            className=" bg-transparent border-none h-full w-full ml-6 text-lg font-palanquin text-white"
+            <MagnifyingGlassIcon className="inline-block h-8 w-8 ml-5 text-coral-red" aria-hidden="true" />
+            <input type="text" placeholder="What are you looking for ?"
+            className=" bg-transparent border-none  text-lg font-palanquin text-black ml-6"
             value={input} onChange={(e) => handleInputChange(e.target.value)} />
           </>
-        ) : null}
+        {/* ) : null}
         
-        {showSearchBtn ? (<XCircleIcon className="block h-10 w-10 -right-12 absolute text-coral-red" aria-hidden="true" onClick={handleCloseBtnClick}/>) : null}
+        {showSearchBtn ? (<XCircleIcon className="block h-10 w-10 -right-12 absolute text-white" aria-hidden="true" onClick={handleCloseBtnClick}/>) : null} */}
     </div>
   )
 }
