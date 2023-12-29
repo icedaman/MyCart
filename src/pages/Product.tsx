@@ -13,7 +13,7 @@ const Product = () => {
         <div key={filteredItem.id}>
           <div className='flex flex-col'>
             <p className='my-4 text-4xl  text-amber-300 text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>{filteredItem.name}</p>
-            <img src={filteredItem.imgURL} alt="item" className='w-80 m-auto my-8 hover:scale-125 ease-in-out duration-400 transition-transform' />
+            <img src={filteredItem.imgURL} alt="item" className='w-80 m-auto my-8 hover:scale-125 transition-transform duration-500 ease-in-out max-h-[500px]' />
             <p className='my-4 text-3xl  text-amber-300 text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>{filteredItem.price}</p>
           </div>
           <div className='m-auto my-4 w-2/4'>

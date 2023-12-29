@@ -28,9 +28,9 @@ const ScrollIndicator = () => {
   }, []);
 
   return (
-    <div className="bg-orange-300 fixed top-0 h-1 w-screen z-50">
+    <div className="bg-coral-red fixed top-0 h-1 w-screen z-50">
       <div
-        className="bg-coral-red h-full"
+        className="bg-orange-300 h-full"
         style={{ width: scroll + "%" }}
       ></div>
       {/* <p>scroll: {scroll}</p> */}
