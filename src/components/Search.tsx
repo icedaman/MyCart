@@ -13,7 +13,7 @@ const Search = () => {
     // <div  className="max-container absolute  z-50 top-0 right-1/3">
       <div className="m-8  flex flex-col items-center min-w-[30%] absolute z-50 top-0 right-1/3 -focus-within:w-[50%]">
         <SearchBar input={input} setInput={setInput} setResults={setResults} />
-        <SearchResultsList results={results} setResults={setResults} setInput={setInput}/>
+        <SearchResultsList results={results} setResults={setResults} input={input} setInput={setInput}/>
       </div>
     // </div>
   )

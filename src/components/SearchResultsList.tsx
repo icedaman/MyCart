@@ -1,6 +1,6 @@
 import { NavLink} from 'react-router-dom'
 
-export const SearchResultsList = ({ results, setResults, setInput }) => {
+export const SearchResultsList = ({ results, setResults, input, setInput }) => {
   
   const handleClick = () =>{
     setInput('')
@@ -9,6 +9,12 @@ export const SearchResultsList = ({ results, setResults, setInput }) => {
 
   return (
     <>
+    {input && results.length === 0 ? (
+      <p  className="w-2/3 text-center p-10 text-white border-b-2 text-xl font-montserrat font-medium bg-coral-red rounded-lg">
+        No results found
+      </p> 
+    ) : null}
+
     {results.length !== 0 ? (
       <div className="w-full bg-white flex flex-col shadow-lg shadow-slate-700 rounded-md mt-2 p-6 max-h-[530px] overflow-y-scroll">
         {results.map((item, index) =>( 

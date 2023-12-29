@@ -9,8 +9,8 @@ const Nav = () => {
   const [openMenu, setOpenMenu] = useState(false)
 
   return (
-    <div className="shadow-md w-full fixd top-0 left-0 ">
-      <div className="md:flex items-center justify-between bg-coral-red py-2 md:px-10 px-7 ">
+    <div className="shadow-md w-full fixd top-0 left-0 z-50 relative bg-coral-red">
+      <div className="md:flex items-center justify-between  py-2 md:px-10 px-7 max-container">
         <div className="cursor-pointer flex items-center">
           <span className="">
             <NavLink to="/">
@@ -42,7 +42,7 @@ const Nav = () => {
           ))} */}
           <NavLink to="/products" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>
             <button className=' font-palanquin font-semibold py-2 px-6 rounded md:ml-8 hover:bg-red-600 duration-500'>
-              Products  
+              All Products  
             </button>
           </NavLink>
           {/* <NavLink to="/products/search" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>

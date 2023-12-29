@@ -7,7 +7,7 @@ const LandingPage = () => {
     <main>
         <ScrollToTopBtn />
         <ScrollIndicator /> 
-        <section className="xl:padding-l wide:padding-r padding-b">
+        <section className="xl:padding-l wide:padding-r padding-b mt-[-100px]">
           <Hero />
         </section>
         <section className="padding">
@@ -28,9 +28,9 @@ const LandingPage = () => {
         <section className="padding-x sm:py-32 py-16 w-full">
           <Subscribe />
         </section>
-        <section className="bg-black padding-x padding-t pb-8">
+        {/* <section className="bg-black padding-x padding-t pb-8">
           <Footer />
-        </section>
+        </section> */}
       </main>
   )
 }

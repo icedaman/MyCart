@@ -7,6 +7,7 @@ import ProductDetails from './pages/ProductDetails';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import NotFound from './pages/NotFound';
+import Footer from './sections/Footer';
 
 const App = () => {
 
@@ -22,6 +23,9 @@ const App = () => {
         </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <section className="bg-black padding-x padding-t pb-8">
+        <Footer />
+      </section>
     </>
   )
 }
