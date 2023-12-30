@@ -5,31 +5,32 @@ import { useState, useEffect } from 'react'
 
 const Products = () => {
   const allProductsList = [...shoeList, ...pantsList, ...jacketList, ...trackSuiteList]
-  const [filters, setFilters] = useState([])
-  const [filteredItems, setfilteredItems] = useState(allProductsList)
+  const filters =['jackets', 'trackSuites', 'shoes', 'pants']
+  const [selectedFilters, setSelectedFilters] = useState([])
+  const [filteredItems, setFilteredItems] = useState(allProductsList)
 
   useEffect(()=> {
     handleFiltering()
-  }, [filters])
+  }, [selectedFilters])
 
-  const handleAddfilter = (e) =>{
-    if(!filters.includes(e.target.value)){
-      setFilters([ ...filters, e.target.value])
+  const handleToggleFilter = (e: any) => {
+    if(!selectedFilters.includes(e.target.value)){
+      setSelectedFilters([...selectedFilters, e.target.value])
     }else{
-      let filtered = filters.filter(item => (item !== e.target.value))
-      setFilters(filtered)
+      const filteredFilters = selectedFilters.filter(filter => filter !== e.target.value)
+      setSelectedFilters(filteredFilters)
     }
   }
 
   const handleFiltering = () =>{
-    if(filters.length > 0 ){
-      const x = filters.map(f => {
-        const y = allProductsList.filter(p => p.category === f)
-        return y
+    if(selectedFilters.length > 0) {
+      const filteredList = selectedFilters.map(f => {
+        const itemsInSelectedFilters = allProductsList.filter(p => p.category === f)
+        return itemsInSelectedFilters
       })
-      setfilteredItems(x.flat())
+      setFilteredItems(filteredList.flat())
     }else{
-      setfilteredItems([...allProductsList])
+      setFilteredItems([...allProductsList])
     }
   }
 
@@ -38,13 +39,18 @@ const Products = () => {
       <div className='max-container pb-8'>
         <h1 className='text-4xl py-4 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>All Products</h1>
 
-        <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14 mt-8'>
-          <button className={`p-2 rounded-xl w-40 m-auto text-xl font-semibold bg-white text-coral-red active:text-red`} value={'shoes'} onClick={handleAddfilter}> Shoes</button>
-          <button className={`p-2 rounded-xl w-40 m-auto text-xl font-semibold bg-white text-coral-red active:text-red`} value={'pants'} onClick={handleAddfilter}> Pants</button>
-          <button className={`p-2 rounded-xl w-40 m-auto text-xl font-semibold bg-white text-coral-red active:text-red`} value={'jackets'} onClick={handleAddfilter}> Jackets</button>
-          <button className={`p-2 rounded-xl w-40 m-auto text-xl font-semibold bg-white text-coral-red active:text-red`} value={'trackSuites'} onClick={handleAddfilter}> Track Suites</button>
+        <div className='grid lg:grid-cols-6 sm:gap-6 gap-14 my-8'>
+          <p className='text-2xl text-center'>Filters:</p>
+          {filters.map((filter, i)=> (
+              <button className={`p-2 rounded-xl w-40 m-auto text-xl font-semibold text-coral-red active:text-red 
+                ${selectedFilters.includes(filter) ? 'bg-coral-red text-white' : 'bg-white text-coral-red'}`} 
+                value={filter} onClick={handleToggleFilter} key={i}
+              >
+                {filter.toUpperCase()}
+              </button>
+          ))}
+          <p className='text-2xl text-center'>Filters:</p>
         </div>
-
         
         <div className="mt-16 mx-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14">
           {filteredItems && filteredItems?.map(item => (
