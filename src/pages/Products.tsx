@@ -8,6 +8,7 @@ const Products = () => {
   const filters =['jackets', 'trackSuites', 'shoes', 'pants']
   const [selectedFilters, setSelectedFilters] = useState([])
   const [filteredItems, setFilteredItems] = useState(allProductsList)
+  const [displayOrderByDesPrice, setDisplayOrderByDesPrice] = useState(false)
 
   useEffect(()=> {
     handleFiltering()
@@ -34,6 +35,16 @@ const Products = () => {
     }
   }
 
+  const handleOrderBtnClick = () => {
+    const orderedItems = filteredItems.sort((a,b) =>{
+      if(displayOrderByDesPrice) return Number(a.price.slice(1)) > Number(b.price.slice(1)) ? -1 : Number(b.price.slice(1)) > Number(a.price.slice(1)) ? 1 : 0
+      if(!displayOrderByDesPrice) return Number(a.price.slice(1)) > Number(b.price.slice(1)) ? 1 : Number(b.price.slice(1)) > Number(a.price.slice(1)) ? -1 : 0
+    })
+
+    setDisplayOrderByDesPrice(!displayOrderByDesPrice)
+    setFilteredItems([...orderedItems])
+  }
+
   return (
     <div className='bg-hero'>
       <div className='max-container pb-8'>
@@ -49,7 +60,13 @@ const Products = () => {
                 {filter.toUpperCase()}
               </button>
           ))}
-          <p className='text-2xl text-center'>Filters:</p>
+          <div className='flex flex-col'>
+            {!displayOrderByDesPrice ? (
+              <button className='text-xl cursor-pointer bg-white h-8 text-center' onClick={handleOrderBtnClick}>Order by Price &darr;</button>
+            ) : (
+              <button className='text-xl cursor-pointer bg-white h-8 text-center' onClick={handleOrderBtnClick}>Order by Price &uarr;</button>
+            )}
+          </div>
         </div>
         
         <div className="mt-16 mx-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14">
