@@ -9,9 +9,9 @@ const Product = () => {
 
   return (
     <div className='bg-hero'>
-      <div className="max-container">
+      <div className="max-container py-20">
         {allProductsList.filter(item => item.id === Number(queryId.id) && item.category === queryId.category).map(filteredItem => (
-          <div key={filteredItem.id} className='pt-14 pb-40'>
+          <div key={filteredItem.id} className='w-2/4 m-auto py-4 bg-white rounded-xl'>
             <div className='flex flex-col'>
               <p className='my-4 text-4xl  text-amber-300 text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>{filteredItem.name}</p>
               <img src={filteredItem.imgURL} alt="item" className='w-80 my-10 m-auto hover:scale-125 transition-transform duration-500 ease-in-out max-h-[500px]' />
