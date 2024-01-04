@@ -10,6 +10,10 @@ const Products = () => {
   const [filteredItems, setFilteredItems] = useState(allProductsList)
   const [displayOrderByDesPrice, setDisplayOrderByDesPrice] = useState(false)
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+  
   useEffect(()=> {
     handleFiltering()
   }, [selectedFilters])
@@ -23,7 +27,7 @@ const Products = () => {
     }
   }
 
-  const handleFiltering = () =>{
+  const handleFiltering = () => {
     if(selectedFilters.length > 0) {
       const filteredList = selectedFilters.map(f => {
         const itemsInSelectedFilters = allProductsList.filter(p => p.category === f)
@@ -37,8 +41,8 @@ const Products = () => {
 
   const handleOrderBtnClick = () => {
     const orderedItems = filteredItems.sort((a,b) =>{
-      if(displayOrderByDesPrice) return Number(a.price.slice(1)) > Number(b.price.slice(1)) ? -1 : Number(b.price.slice(1)) > Number(a.price.slice(1)) ? 1 : 0
-      if(!displayOrderByDesPrice) return Number(a.price.slice(1)) > Number(b.price.slice(1)) ? 1 : Number(b.price.slice(1)) > Number(a.price.slice(1)) ? -1 : 0
+      if(displayOrderByDesPrice) return a.price > b.price ? -1 : b.price > a.price ? 1 : 0
+      if(!displayOrderByDesPrice) return a.price > b.price ? 1 : b.price > a.price ? -1 : 0
     })
 
     setDisplayOrderByDesPrice(!displayOrderByDesPrice)
@@ -49,7 +53,6 @@ const Products = () => {
     <div className='bg-hero'>
       <div className='max-container pb-8'>
         <h1 className='text-4xl py-4 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>All Products</h1>
-
         <div className='grid lg:grid-cols-6 sm:gap-6 gap-14 my-8'>
           <p className='text-2xl text-center'>Filters:</p>
           {filters.map((filter, i)=> (

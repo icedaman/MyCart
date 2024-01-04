@@ -1,8 +1,14 @@
 import ScrollIndicator from "../components/ScrollIndicator"
 import ScrollToTopBtn from "../components/ScrollToTopBtn"
 import { Hero, PopularProducts, SuperQuality, Services, SpecialOffers, CustomerReviews, Subscribe, Footer } from "../sections"
+import { useEffect } from 'react'
 
 const LandingPage = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
         <ScrollToTopBtn />

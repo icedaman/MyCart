@@ -38,8 +38,8 @@ export const SearchBar = ({ setResults, input, setInput }) => {
         </button>
         {showSearchBtn ? ( */}
           <>
-            {input ? <XCircleIcon className="block w-8 ml-5 text-coral-red" aria-hidden="true" onClick={handleCloseBtnClick} /> 
-              : <MagnifyingGlassIcon className="inline-block w-8 ml-5 text-coral-red" aria-hidden="true" />
+            {input ? <XCircleIcon className="block w-[30px] ml-5 text-coral-red" aria-hidden="true" onClick={handleCloseBtnClick} /> 
+              : <MagnifyingGlassIcon className="inline-block w-[30px] ml-5 text-coral-red" aria-hidden="true" />
             }
             <input type="text" placeholder="What are you looking for ?"
             className=" bg-transparent border-none  text-lg font-palanquin text-black ml-6"

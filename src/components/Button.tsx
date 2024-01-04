@@ -1,5 +1,5 @@
 
-const Button = ({ label, iconURL, backgroundColor, borderColor, textColor, fullWidth }) => {
+const Button = ({ label, iconURL, backgroundColor, borderColor, textColor, fullWidth, onClick }) => {
   return (
     <button className={`flex justify-center items-center
       px-7 py-4 border font-montserrat leading-none gap-2 rounded-full
@@ -9,6 +9,7 @@ const Button = ({ label, iconURL, backgroundColor, borderColor, textColor, fullW
       ${borderColor ? borderColor : 'border-[#ff4000]'}
       ${fullWidth && 'w-full'}
     `}
+    onClick={onClick}
     >
       {label}
       {iconURL &&

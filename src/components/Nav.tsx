@@ -1,11 +1,11 @@
-import { Bars3Icon, BellIcon, XMarkIcon, Bars4Icon, XCircleIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, Bars4Icon, XCircleIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
 import shoesLogo from '../assets/images/shoesLogo.svg'
 import { navLinks } from '../constants'
 import { useState } from 'react'
 import { NavLink, Outlet} from 'react-router-dom'
 import Search from './Search'
 
-const Nav = () => {
+const Nav = ({ cart, setCart }) => {
   const [openMenu, setOpenMenu] = useState(false)
 
   return (
@@ -45,11 +45,14 @@ const Nav = () => {
               All Products  
             </button>
           </NavLink>
-          {/* <NavLink to="/products/search" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>
-            <button className=' font-palanquin font-semibold py-2 px-6 rounded md:ml-8 hover:bg-red-600 duration-500'>
-              Search
-            </button>
-          </NavLink>  */}
+          <NavLink to="/cart" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>
+            <div className='relative'>
+              <ShoppingCartIcon className="inline-block h-8 w-8 hover:bg-red-600 duration-500 " aria-hidden="true" />
+              <span className='bg-black px-2 rounded-2xl absolute left-5 -top-2'>
+                {cart.length > 0 && cart.length}
+              </span>
+            </div>
+          </NavLink> 
         </ul>
       </div>
     </div>
