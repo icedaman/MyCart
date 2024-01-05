@@ -34,6 +34,12 @@ const Cart = ({ cart, setCart }) => {
       <h1 className='text-4xl py-4 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>My Cart</h1>
       <div className="max-container flex justify-center items-center py-8 text-center">
         <div className="bg-white p-20 w-2/4 rounded-lg">
+          {cart.length > 0 ? (
+            <div onClick={()=>setCart([])} className="text-lg font-palanquin font-medium text-right flex flex-row-reverse justify-center cursor-pointer rounded-lg p-2 border-coral-red border-2 mb-4 ml-[70%] hover:bg-coral-red hover:text-white">
+              Empty Card
+            </div>
+          ) : null }
+
           {cart?.map((item, i) => (
             <div className="bg-white border-2 p-4 max-h-40 flex items-center justify-around rounded-lg" key={i+item.id+item.category+item.name}>
               <img src={item.imgURL} alt="item" width={100} className="max-h-[150px] w-1/3" />
