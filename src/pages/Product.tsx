@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline'
+import { toast } from 'react-toastify';
 
 const Product = ({ cart, setCart }) => {
   const navigate = useNavigate()
@@ -17,7 +18,9 @@ const Product = ({ cart, setCart }) => {
 
   const addToCartBtnClick = (item) => {
     setCart([...cart, item])
-    alert('Product added to Cart!')
+    toast.success(`${item.name} added to your cart`, {
+      position: toast.POSITION.TOP_CENTER
+    })
   }
 
   return (

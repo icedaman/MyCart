@@ -1,17 +1,23 @@
 import Button from "../components/Button"
 import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react'
+import { toast } from 'react-toastify';
 
 const Cart = ({ cart, setCart }) => {
 
   const handleCheckoutBtnClick = () => {
-    alert('Checkout in Process!')
+    toast.info(`Checkout in Process!`, {
+      position: toast.POSITION.TOP_CENTER
+    });
     setCart([])
   }
 
   const handleRemoveItemBtnClick = (itemToRemove) => {
     const filteredCarList = cart.filter(item =>   item.category !== itemToRemove.category || item.id !== itemToRemove.id)
     setCart([...filteredCarList])
+    toast.info(`${itemToRemove.name} removed from your cart`, {
+      position: toast.POSITION.TOP_CENTER
+    })
   }
 
   useEffect(() => {

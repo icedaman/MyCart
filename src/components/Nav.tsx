@@ -4,8 +4,9 @@ import { navLinks } from '../constants'
 import { useState } from 'react'
 import { NavLink, Outlet} from 'react-router-dom'
 import Search from './Search'
+import { ToastContainer } from 'react-toastify';
 
-const Nav = ({ cart, setCart }) => {
+const Nav = ({ cart }) => {
   const [openMenu, setOpenMenu] = useState(false)
 
   return (
@@ -29,6 +30,7 @@ const Nav = ({ cart, setCart }) => {
         </div>
 
         <Search />
+        <ToastContainer />
 
         <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static 
          md:z-auto z-50 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-out md:opacity-100
@@ -46,13 +48,13 @@ const Nav = ({ cart, setCart }) => {
             </button>
           </NavLink>
           <NavLink to="/cart" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>
-            <div className='relative'>
+            <div className='relative py-2 px-6'>
               <ShoppingCartIcon className="inline-block h-8 w-8 hover:bg-red-600 duration-500 " aria-hidden="true" />
               <span className='bg-black px-2 rounded-2xl absolute left-5 -top-2'>
                 {cart.length > 0 && cart.length}
               </span>
             </div>
-          </NavLink> 
+          </NavLink>
         </ul>
       </div>
     </div>

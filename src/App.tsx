@@ -10,10 +10,10 @@ import { useState } from 'react'
 
 const App = () => {
   const [cart, setCart] = useState([])
-  
+
   return (
     <>
-      <Nav cart={cart} setCart={setCart}/>
+      <Nav cart={cart} setCart={setCart}  />
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/products'>
