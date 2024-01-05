@@ -8,7 +8,7 @@ const ProductDetails = ({ name, price, imgURL }) => {
       <div className="p-8 rounded ">
           <img src={imgURL} width={250} className="m-auto h-28 object-contain hover:scale-125 transition-transform ease-in-out duration-500" />
       </div>
-      <h4 className='text-2xl py-2 px-2 font-semibold capitalize text-clip overflow-hidden text-center text-coral-red'>€ {price}</h4>
+      <h4 className='text-2xl py-2 px-2 font-semibold capitalize text-clip overflow-hidden text-center text-coral-red'>{price} €</h4>
     </motion.div>
   )
 }

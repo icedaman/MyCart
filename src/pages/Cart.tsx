@@ -1,12 +1,12 @@
 import Button from "../components/Button"
 import { NavLink } from 'react-router-dom'
-import { useEffect } from 'react'
 import { toast } from 'react-toastify';
+import { useEffect } from 'react'
 
 const Cart = ({ cart, setCart }) => {
 
   const handleCheckoutBtnClick = () => {
-    toast.info(`Checkout in Process!`, {
+    toast.info(`Checkout in Process !`, {
       position: toast.POSITION.TOP_CENTER
     });
     setCart([])
@@ -18,6 +18,11 @@ const Cart = ({ cart, setCart }) => {
     toast.info(`${itemToRemove.name} removed from your cart`, {
       position: toast.POSITION.TOP_CENTER
     })
+  }
+ 
+  const getTotal = () => {
+    const totalSum = cart?.map(item => item.price).reduce((acc, cValue) => acc + cValue , 0)
+    return totalSum
   }
 
   useEffect(() => {
@@ -34,7 +39,7 @@ const Cart = ({ cart, setCart }) => {
               <img src={item.imgURL} alt="item" width={100} className="max-h-[150px] w-1/3" />
               <div className="w-1/3">
                 <p className="text-xl font-bold font-palanquin mb-4 text-coral-red">{item.name}</p>
-                <p className="text-lg font-bold font-palanquin">€ {item.price}</p>
+                <p className="text-lg font-bold font-palanquin">{item.price} €</p>
               </div>
               <button className="text-base text-white bg-red-600 hover:bg-red-800 px-2 py-1 rounded-md" 
                 onClick={() => handleRemoveItemBtnClick(item)}>
@@ -42,6 +47,13 @@ const Cart = ({ cart, setCart }) => {
                 </button>
             </div>
           ))}
+
+          {cart.length > 0 ? (
+            <div className="w-full flex items-center mt-4 justify-end">
+              <p className="text-xl font-semibold mr-2">Total:</p>
+              <p className="text-xl font-semibold">{getTotal()} €</p>
+            </div>
+          ) : null}
 
           <div className="flex justify-between mt-10">
             {cart.length !== 0 ? (
