@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { NavLink, Outlet} from 'react-router-dom'
 import Search from './Search'
 import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Nav = ({ cart }) => {
   const [openMenu, setOpenMenu] = useState(false)
