@@ -2,7 +2,7 @@ import star from '../assets/icons/star.svg'
 
 const PopularProductCard = ({ imgURL, name, price }) => {
   return (
-    <div className="flex flex-1 flex-col w-full max-sm:w-full">
+    <div className="flex flex-1 flex-col w-full max-sm:w-full max-sm:items-center">
       <img src={imgURL} alt={name} className="w-[280px] h-[280px] hover:scale-110 duration-300 hover:shadow-[0_0_30px_gray] rounded-3xl" />
       <div className="mt-8 flex justify-start gap-2.5">
         <img src={star} alt="rating" width={24} height={24} />

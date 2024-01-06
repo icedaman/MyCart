@@ -37,12 +37,12 @@ const Cart = ({ cart, setCart }) => {
   }, [])
 
   return (
-    <div className="bg-hero min-h-screen">
+    <div className="bg-hero min-h-screen max-lg:min-h-[500px]">
       <h1 className='text-4xl py-4 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>My Cart</h1>
       <div className="max-container flex justify-center items-center py-8 text-center">
-        <div className="bg-white p-20 w-2/4 rounded-lg">
+        <div className="bg-white p-20 w-2/4 rounded-lg max-xl:w-[70%]">
           {cart.length > 0 ? (
-            <div onClick={handleEmptyCart} className="text-lg font-palanquin font-medium text-right flex flex-row-reverse justify-center cursor-pointer rounded-lg p-2 border-coral-red border-2 mb-4 ml-[70%] hover:bg-coral-red hover:text-white">
+            <div onClick={handleEmptyCart} className="text-lg max-md:w-[40%] font-palanquin font-medium text-right flex flex-row-reverse justify-center cursor-pointer rounded-lg p-2 border-coral-red border-2 mb-4 ml-[70%] hover:bg-coral-red hover:text-white">
               Empty Card
             </div>
           ) : null }

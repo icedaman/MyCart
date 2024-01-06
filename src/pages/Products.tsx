@@ -53,7 +53,7 @@ const Products = () => {
     <div className='bg-hero'>
       <div className='max-container pb-8'>
         <h1 className='text-4xl py-4 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>All Products</h1>
-        <div className='grid lg:grid-cols-6 sm:gap-6 gap-14 my-8'>
+        <div className='grid lg:grid-cols-6 sm:gap-6 my-8 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:gap-2'>
           <p className='text-2xl text-center'>Filters:</p>
           {filters.map((filter, i)=> (
               <button className={`p-2 rounded-xl w-40 m-auto text-xl font-semibold text-coral-red active:text-red 
@@ -65,9 +65,9 @@ const Products = () => {
           ))}
           <div className='flex flex-col'>
             {!displayOrderByDesPrice ? (
-              <button className='text-xl cursor-pointer bg-white h-8 text-center' onClick={handleOrderBtnClick}>Order by Price &darr;</button>
+              <button className='text-xl max-w-[220px] cursor-pointer bg-white h-8 text-center' onClick={handleOrderBtnClick}>Order by Price &darr;</button>
             ) : (
-              <button className='text-xl cursor-pointer bg-white h-8 text-center' onClick={handleOrderBtnClick}>Order by Price &uarr;</button>
+              <button className='text-xl max-w-[220px] cursor-pointer bg-white h-8 text-center' onClick={handleOrderBtnClick}>Order by Price &uarr;</button>
             )}
           </div>
         </div>

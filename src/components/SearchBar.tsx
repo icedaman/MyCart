@@ -32,17 +32,17 @@ export const SearchBar = ({ setResults, input, setInput }) => {
   }
 
   return (
-    <div className="bg-white-400 p-2 rounded-full shadow-lg flex items-center relative w-2/3 focus-within:border-2 focus-within:border-amber-300 focus-within:scale-105">
+    <div className="bg-white-400 p-2 rounded-full shadow-lg flex items-center relative max- xl:min-w-2/3 focus-within:border-2 focus-within:border-amber-300 focus-within:scale-105">
         {/* <button  onClick={()=> setShowSearchBtn(!showSearchBtn)}>
           {!showSearchBtn ? <MagnifyingGlassIcon className="inline-block h-8 w-8 text-white transition-all duration-500 hover:scale-125" aria-hidden="true" /> : null}
         </button>
         {showSearchBtn ? ( */}
           <>
-            {input ? <XCircleIcon className="block w-[30px] ml-5 text-coral-red" aria-hidden="true" onClick={handleCloseBtnClick} /> 
-              : <MagnifyingGlassIcon className="inline-block w-[30px] ml-5 text-coral-red" aria-hidden="true" />
+            {input ? <XCircleIcon className="block w-[30px] xl:ml-5 text-coral-red" aria-hidden="true" onClick={handleCloseBtnClick} /> 
+              : <MagnifyingGlassIcon className="inline-block w-[30px] xl:ml-5 text-coral-red" aria-hidden="true" />
             }
             <input type="text" placeholder="What are you looking for ?"
-            className=" bg-transparent border-none  text-lg font-palanquin text-black ml-6"
+            className=" bg-transparent border-none  text-lg font-palanquin text-black ml-6 w-full"
             value={input} onChange={(e) => handleInputChange(e.target.value)} />
           </>
         {/* ) : null}

@@ -13,7 +13,7 @@ const LandingPage = () => {
     <main>
         <ScrollToTopBtn />
         <ScrollIndicator /> 
-        <section className="xl:padding-l wide:padding-r padding-b mt-[-100px]">
+        <section className="xl:padding-l wide:padding-r padding-b xl:mt-[-9%] md:mt-[-4%]">
           <Hero />
         </section>
         <section className="padding">

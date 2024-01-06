@@ -22,7 +22,7 @@ const Nav = ({ cart }) => {
           </span>
         </div>
 
-        <div className=' absolute right-8 top-3 cursor-pointer md:hidden' onClick={()=>setOpenMenu(!openMenu)}>
+        <div className=' absolute right-8 top-8 cursor-pointer md:hidden' onClick={()=>setOpenMenu(!openMenu)}>
           {!openMenu ? 
             (<Bars4Icon className="block h-10 w-10" aria-hidden="true" />)
             : 
@@ -33,9 +33,9 @@ const Nav = ({ cart }) => {
         <Search />
         <ToastContainer />
 
-        <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static 
+        <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static max-md:bg-coral-red 
          md:z-auto z-50 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-700 ease-out md:opacity-100
-         ${openMenu ? 'top-16 opacity-100' : 'top-[-490px]'}`}>
+         ${openMenu ? 'top-24 opacity-100' : 'top-[-490px]'}`}>
           {/* {navLinks.map((link)=>(
             <li key={link.label} className='md:ml-8 text-xl font-montserrat font-semibold md:my-0 my-7'>
               <NavLink to={link.href} className='text-gray-800 hover:text-white-400 duration-100 hover:bg-coral-red'>
@@ -43,11 +43,13 @@ const Nav = ({ cart }) => {
               </NavLink>
             </li>
           ))} */}
+          <li className='md:ml-8 md:my-0 my-7'>
           <NavLink to="/products" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>
             <button className=' font-palanquin font-semibold py-2 px-6 rounded md:ml-8 hover:bg-red-600 duration-500'>
               All Products  
             </button>
-          </NavLink>
+          </NavLink></li>
+          <li className='md:ml-8 md:my-0 my-7'>
           <NavLink to="/cart" style={({ isActive }) => ({ color: !isActive ? "white" : "yellow" })} end={true}>
             <div className='relative py-2 px-6'>
               <ShoppingCartIcon className="inline-block h-8 w-8 hover:bg-red-600 duration-500 " aria-hidden="true" />
@@ -55,7 +57,7 @@ const Nav = ({ cart }) => {
                 {cart.length > 0 && cart.length}
               </span>
             </div>
-          </NavLink>
+          </NavLink></li>
         </ul>
       </div>
     </div>
