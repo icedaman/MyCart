@@ -30,7 +30,7 @@ const Product = ({ cart, setCart }) => {
   }
 
   return (
-    <div className='bg-hero min-h-screen'>
+    <div className='bg-hero min-h-screen max-lg:min-h-[600px]'>
         <motion.div layout className="max-container py-20">
           <AnimatePresence>
             {allProductsList.filter(item => item.id === Number(queryId.id) && item.category === queryId.category).map(filteredItem => (
