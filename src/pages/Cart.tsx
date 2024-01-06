@@ -37,8 +37,8 @@ const Cart = ({ cart, setCart }) => {
   }, [])
 
   return (
-    <div className="bg-hero min-h-screen max-lg:min-h-[600px]">
-      <h1 className='text-4xl py-4 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>My Cart</h1>
+    <div className="bg-hero min-h-screen max-lg:min-h-[800px]">
+      <h1 className='text-4xl py-4 xl:pt-14 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>My Cart</h1>
       <div className="max-container flex justify-center items-center py-8 text-center">
         <div className="bg-white p-20 w-2/4 rounded-lg max-xl:w-[70%]">
           {cart.length > 0 ? (

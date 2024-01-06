@@ -11,7 +11,7 @@ const Search = () => {
 
   return (
     // <div  className="max-container absolute  z-50 top-0 right-1/3">
-      <div className="my-8 mr-[7%] ml-[1 %] flex flex-col items-center min-w-[20%]
+      <div className="my-8 mr-[7%] max-md:mr-0 ml-[1 %] flex flex-col items-center min-w-[20%]
          absolute z-50 top-0 lg:right-1/3 max-md:right-[23%] right-[27%] max-sm:right-20">
         <SearchBar input={input} setInput={setInput} setResults={setResults} />
         <SearchResultsList results={results} setResults={setResults} input={input} setInput={setInput}/>

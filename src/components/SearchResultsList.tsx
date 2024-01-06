@@ -16,7 +16,7 @@ export const SearchResultsList = ({ results, setResults, input, setInput }) => {
     ) : null}
 
     {results.length !== 0 ? (
-      <div className="w-full bg-white flex flex-col shadow-lg shadow-slate-700 rounded-md mt-2 p-6 max-h-[530px] overflow-y-scroll min-w-[530px]">
+      <div className="w-full bg-white flex flex-col shadow-lg shadow-slate-700 rounded-md mt-2 p-6 max-h-[530px] overflow-y-scroll min-w-[500px]">
         {results.map((item, index) =>( 
           <>
             <NavLink to={`/products/${item.category}/${item.id}`} onClick={handleClick}>

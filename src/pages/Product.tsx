@@ -30,8 +30,9 @@ const Product = ({ cart, setCart }) => {
   }
 
   return (
-    <div className='bg-hero min-h-screen max-lg:min-h-[600px]'>
-        <motion.div layout className="max-container py-20">
+    <div className='bg-hero min-h-screen max-lg:min-h-[800px]'>
+      <h1 className='text-4xl py-4 lg:pt-14 text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>Product Details</h1>
+        <motion.div layout className="max-container py-24">
           <AnimatePresence>
             {allProductsList.filter(item => item.id === Number(queryId.id) && item.category === queryId.category).map(filteredItem => (
               <div key={filteredItem.id} className='w-2/4 max-xl:w-[70%] m-auto py-4 bg-white rounded-xl'>
