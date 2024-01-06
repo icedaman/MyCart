@@ -98,12 +98,12 @@ export const footerLinks = [
     {
         title: "Products",
         links: [
-            { name: "Air Force 1", link: "/" },
-            { name: "Air Max 1", link: "/" },
             { name: "Air Jordan 1", link: "/" },
-            { name: "Air Force 2", link: "/" },
-            { name: "Nike Waffle Racer", link: "/" },
-            { name: "Nike Cortez", link: "/" },
+            { name: "Air Jordan 2", link: "/" },
+            { name: "Air Jordan 3", link: "/" },
+            { name: "New Balance 1", link: "/" },
+            { name: "New Balance 2", link: "/" },
+            { name: "New Balance 13", link: "/" },
         ],
     },
     {
@@ -119,8 +119,8 @@ export const footerLinks = [
     {
         title: "Get in touch",
         links: [
-            { name: "customer@nike.com", link: "mailto:customer@nike.com" },
-            { name: "+92554862354", link: "tel:+92554862354" },
+            { name: "customer@shoesinc.com", link: "mailto:customer@shoesinc.com" },
+            { name: "+2344862354", link: "tel:+2344862354" },
         ],
     },
 ];
