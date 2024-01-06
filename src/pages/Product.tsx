@@ -39,7 +39,7 @@ const Product = ({ cart, setCart }) => {
                 <div className='flex flex-col'>
                   <p className='my-4 text-4xl  text-amber-300 text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>{filteredItem.name}</p>
                   <img src={filteredItem.imgURL} alt="item" className='w-80 my-10 m-auto hover:scale-125 transition-transform duration-500 ease-in-out max-h-[500px]' />
-                  <p className='my-4 text-3xl  text-amber-300 text-center  capitalize font-bold [text-shadow:1px_1px_4px_#000]'>{filteredItem.price} €</p>
+                  <p className='my-4 text-3xl  text-coral-red text-center  capitalize font-bold [text-shadow:1px_1px_1px_#000]'>{filteredItem.price} €</p>
                 </div>
                 <div className='m-auto my-4 w-2/4'>
                   <NavLink to={'/cart'}>

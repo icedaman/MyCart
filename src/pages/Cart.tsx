@@ -8,7 +8,7 @@ const Cart = ({ cart, setCart }) => {
   const handleCheckoutBtnClick = () => {
     toast.info(`Checkout in Process !`, {
       position: toast.POSITION.TOP_CENTER
-    });
+    })
     setCart([])
   }
 
@@ -25,6 +25,13 @@ const Cart = ({ cart, setCart }) => {
     return totalSum
   }
 
+  const handleEmptyCart = () => {
+    toast.warning(`Your Cart is now empty`, {
+      position: toast.POSITION.TOP_CENTER
+    })
+    setCart([])
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -35,7 +42,7 @@ const Cart = ({ cart, setCart }) => {
       <div className="max-container flex justify-center items-center py-8 text-center">
         <div className="bg-white p-20 w-2/4 rounded-lg">
           {cart.length > 0 ? (
-            <div onClick={()=>setCart([])} className="text-lg font-palanquin font-medium text-right flex flex-row-reverse justify-center cursor-pointer rounded-lg p-2 border-coral-red border-2 mb-4 ml-[70%] hover:bg-coral-red hover:text-white">
+            <div onClick={handleEmptyCart} className="text-lg font-palanquin font-medium text-right flex flex-row-reverse justify-center cursor-pointer rounded-lg p-2 border-coral-red border-2 mb-4 ml-[70%] hover:bg-coral-red hover:text-white">
               Empty Card
             </div>
           ) : null }
@@ -69,7 +76,7 @@ const Cart = ({ cart, setCart }) => {
                 </Button>
               </NavLink>
               ) : (
-                <p className="text-xl">Your cart is empty</p>
+                <p className="text-xl">Your Cart is empty</p>
             ) }
             <NavLink to={'/products'}>
               <Button label={'Continue Shopping'} iconURL={undefined} backgroundColor={undefined} borderColor={undefined} textColor={undefined} fullWidth={undefined} >       
